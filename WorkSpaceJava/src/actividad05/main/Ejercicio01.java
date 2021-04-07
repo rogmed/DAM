@@ -1,3 +1,13 @@
+/*
+Rogelio Medina Medina
+32066868-S
+rogeliomdn@gmail.com
+DAM - Linkia
+20-21_2_DAM_M03IA_Programación I
+DAM_M03I_20-21_2_ACAS > UF2: Diseño modular > Práctica de funciones y librerías
+actividad05
+*/
+
 package actividad05.main;
 
 import static actividad05.introduceDatos.Pregunta.*;
@@ -7,6 +17,7 @@ import static actividad05.operaciones.geometricas.Operaciones.*;
 
 public class Ejercicio01 {
 
+    /* Función principal que contiene un menú con las distintas opciones. */
     public static void main(String[] args) {
         int opcion;
         do {
@@ -28,11 +39,11 @@ public class Ejercicio01 {
                         muestraValorAleatorio();
                         break;
                     case 3:
-                        double num = pideDouble("Introduzca un valor: ");
+                        double num = pideDouble("Introduzca angulo en radianes: ");
                         muestraSeno(num);
                         break;
                     case 4:
-                        num = pideDouble("Introduzca un valor: ");
+                        num = pideDouble("Introduzca angulo en radianes: ");
                         muestraCoseno(num);
                         break;
                     case 5:
@@ -43,11 +54,12 @@ public class Ejercicio01 {
                         double exp = pideDouble("Introduzca exponente: ");
                         calculaPotencia(base, exp);
                         break;
+                    case 0:
+                        System.out.println("\nCerrando programa.\nGracias. Adiós");
+                        break;
                     default:
                         System.out.println("Por favor, elija una opción válida.");
             }
-            
         } while (opcion != 0);
-        System.out.println("\nCerrando programa.\nGracias. Adiós");
     }
 }
