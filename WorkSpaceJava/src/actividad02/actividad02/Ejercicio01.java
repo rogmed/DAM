@@ -16,6 +16,7 @@ f.	Si el usuario introduce un 0, debe mostrar un mensaje de despedida y finaliza
 Controla mediante un DO WHILE que una vez realizada la operación seleccionada  se vuelva a mostrar el menú de operaciones excepto si el usuario ha introducido un 0. Si se introduce un valor menor a 0 o menor a 5, indica que se ha introducido un valor incorrecto y vuelve a mostrar el menú.
 
  */
+package actividad02;
 
 import java.io.BufferedReader;
 import java.io.IOException;

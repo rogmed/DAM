@@ -1,4 +1,4 @@
-package actividad06.menu;
+package menu;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-import static actividad06.introduceDatos.Pregunta.*;
+import static introduceDatos.Pregunta.*;
 
 public class Opciones {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -74,6 +74,8 @@ public class Opciones {
      * 3. Muestra un archivo
      * 
      * Lista los archivos en la carpeta "archivos" y da a elegir cual leer.
+     * 
+     * @throws IOException
      */
     public static void muestraArchivo() {
         File[] lista = listarArchivos();
@@ -85,27 +87,16 @@ public class Opciones {
 
         try {
             FileReader fr = new FileReader(lista[seleccion]);
-
             BufferedReader br = new BufferedReader(fr);
-
-        } catch (FileNotFoundException e) {
-            System.out.println("No se encuentra el archivo.");
+            String linea_texto = br.readLine();
+            while (linea_texto != null) {
+                System.out.println(linea_texto);
+                linea_texto = br.readLine();
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-
-        String linea_texto = br.readLine();
-
-        // Almacenar contenido para poder concatenar mas tarde con escritura.
-        String contenido_file = "";
-
-        // Bucle para ir imprimiendo cada linea y leer la siguiente.
-        while (linea_texto != null) {
-            System.out.println(linea_texto);
-            contenido_file += linea_texto + linea;
-            linea_texto = br.readLine();
-        }
-        // Cerrar archivo para no bloquear escrita de otros procesos
-        br.close();
-
     }
 
     /**

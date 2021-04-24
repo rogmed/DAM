@@ -1,7 +1,5 @@
-package actividad06;
-
-import static actividad06.menu.Muestra.*;
-import static actividad06.menu.Opciones.*;
+import static menu.Muestra.*;
+import static menu.Opciones.*;
 
 public class Ejercicio01 {
     public static void main(String[] args) {
@@ -27,7 +25,7 @@ public class Ejercicio01 {
                     listarArchivos();
                     break;
                 case 3:
-                    // muestraArchivo();
+                    muestraArchivo();
                     break;
                 case 4:
                     borrarArchivo();

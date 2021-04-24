@@ -1,6 +1,6 @@
-package actividad06.menu;
+package menu;
 
-import static actividad06.introduceDatos.Pregunta.*;
+import static introduceDatos.Pregunta.*;
 
 public class Muestra {
 
