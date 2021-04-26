@@ -31,10 +31,10 @@ public class Ejercicio01 {
                     borrarArchivo();
                     break;
                 case 5:
-                    // renombrarArchivo;
+                    renombrarArchivo();
                     break;
                 case 6:
-                    // reemplazarArchivo;
+                    modificarArchivo();
                     break;
                 case 7:
                     System.out.println("Cerrando programa.");
@@ -43,6 +43,5 @@ public class Ejercicio01 {
                     System.out.println("Por favor, elija una opción correcta.");
             }
         } while (opcion!=7);
-
     }
 }
