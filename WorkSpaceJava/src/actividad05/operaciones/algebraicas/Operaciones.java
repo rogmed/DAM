@@ -1,5 +1,3 @@
-package actividad05.operaciones.algebraicas;
-
 import static actividad05.introduceDatos.Pregunta.*;
 
 public class Operaciones {

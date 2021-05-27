@@ -8,8 +8,6 @@ DAM_M03I_20-21_2_ACAS > UF2: Diseño modular > Práctica de funciones y librerí
 actividad04
 */
 
-package actividad04;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

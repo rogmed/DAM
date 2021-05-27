@@ -1,5 +1,3 @@
-package actividad05.operaciones.geometricas;
-
 public class Operaciones {
 
     /**

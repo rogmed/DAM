@@ -1,8 +1,10 @@
+package ejercicio01.cuentaCorriente;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Pregunta {
+class Utilidades {
 
     /**
      * Pide entero
@@ -14,7 +16,7 @@ public class Pregunta {
      * @param pregunta string con mensaje para pedir valor al usuario
      * @return entero (num) introducido por el usuario
      */
-    public static int pideEntero(String pregunta) {
+    public int pideEntero(String pregunta) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             try {
@@ -39,7 +41,7 @@ public class Pregunta {
      * @param pregunta string con mensaje para pedir valor al usuario
      * @return decimal (num) introducido por el usuario
      */
-    public static double pideDouble(String pregunta) {
+    public double pideDouble(String pregunta) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             try {
