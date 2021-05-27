@@ -1,0 +1,17 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.codeGeneration.generateComments": true,
+    "java.dependency.packagePresentation": "flat",
+    "java.completion.importOrder": [
+    
+        "java",
+        "javax",
+        "com",
+        "org"
+    ],
+    "javascript.suggest.autoImports": false,
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.suggest.paths": false
+}

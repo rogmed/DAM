@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="vehiculos.xsl"?>
+<vehiculos>
+     <vehiculo>
+        <marca>Toyota</marca>
+        <modelo>Auris</modelo>
+        <matricula>3511-BGH</matricula>
+        <puertas>5</puertas>
+        <foto>img/1_toyota_auris.jpg</foto>
+        <color>rojo</color>
+        <tipo>Coche</tipo>
+        <precio>12000</precio>
+        <comentario>
+            El Toyota Auris es un automóvil de turismo del segmento C producido por el fabricante japonés Toyota
+            desde el año 2006. El nombre de Auris proviene del latín aurum que se traduce por oro.1​El Auris es un
+            hatchback de cinco puertas que sustituye en Sudamérica y Europa al Toyota Corolla Sport o Corolla Hatchback;
+            al Toyota Corolla RunX en Japón y en Sudáfrica al Toyota RunX.
+        </comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Yamaha</marca>
+        <modelo>R1</modelo>
+        <matricula>7854-NKD</matricula>
+        <puertas>0</puertas>
+        <foto>img/2_yamaha_r1.jpg</foto>
+        <color>azul</color>
+        <tipo>Moto</tipo>
+        <precio>15000</precio>
+        <comentario>
+            La Yamaha YZF-R1 2020 es una superbike de calle que sube el nivel en todos los aspectos: motor, electrónica,
+            chasis, suspensiones, frenos, diseño...es una moto mucho más sofisticada aunque mantiene su potencia en
+            200 CV pese a haber recibido numerosas mejoras en su corazón de cuatro cilindros paralelos de 999 cc con
+            diseño de cigüeñal crossplane. Esto supone volver a situarla al mejor nivel de la dura competencia en el
+            segmento de las motos más deportivas que además cuentan con una clara herencia de MotoGP y WSBK.
+        </comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Mercedes</marca>
+        <modelo>Actros</modelo>
+        <matricula>8261-QJM</matricula>
+        <puertas>2</puertas>
+        <foto>img/3_mercedes_actros.jpg</foto>
+        <color>rojo</color>
+        <tipo>Camión</tipo>
+        <precio>60000</precio>
+        <comentario>
+            El Mercedes-Benz Actros es un camión pesado introducido por Mercedes-Benz en 1995. Normalmente se utiliza
+            para la logística de larga distancia, el transporte por distribución, Light truck y Autovolquete. Está
+            disponible en pesos a partir de 18 toneladas y es propulsado por un motor diésel V6 o V8 cilindros con
+            turbocompresor e intercooler. Daimler Trucks / Camiones lanzó la versión II de la Actros en el año 2002,
+            y la versión III en 2007.
+        </comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Opel</marca>
+        <modelo>Corsa</modelo>
+        <matricula>6341-FMM</matricula>
+        <puertas>4</puertas>
+        <foto>img/4_opel_corsa.jpg</foto>
+        <color>rojo</color>
+        <tipo>Coche</tipo>
+        <precio>3000</precio>
+        <comentario>
+            Coche antiguo compacto. Muy popular en los años 80. Combina bien con casettes de "No me pises que llevo
+            chanclas" y viajes a la playa.
+        </comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Vespino</marca>
+        <modelo>SC</modelo>
+        <matricula>9874-AMJ</matricula>
+        <puertas>0</puertas>
+        <foto>img/5_vespino_sc.jpg</foto>
+        <color>azul</color>
+        <tipo>Moto</tipo>
+        <precio>1000</precio>
+        <comentario>
+            Un clásico con encanto. Tiene elementos tan maravillosos como la cesta delantera y los pedales, cosa que ya
+            no se ve en las motocicletas actuales, y nos hace preguntarnos si la sociedad está avanzando en la dirección
+            adecuada, sinceramente.
+        </comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Wayne Industries</marca>
+        <modelo>Batmobile</modelo>
+        <matricula>0000-BAT</matricula>
+        <puertas>2</puertas>
+        <foto>img/6_wayneindustries_batmobile.jpg</foto>
+        <color>negro</color>
+        <tipo>Coche</tipo>
+        <precio>10000000</precio>
+        <comentario>
+            Listo para salvar Gotham. Este modelo en concreto se utilizó en 1989 para combatir al Joker, interpretado
+            por Jack Nicholson, en su intento de envenenar a toda la ciudad, el cual fue frustrado por Batman, al que le
+            daba vida el bueno de Michael Keaton. Dentro de este coche se sentó también Kim Bassinger, que no es poca
+            cosa.
+        </comentario>
+    </vehiculo>
+</vehiculos>

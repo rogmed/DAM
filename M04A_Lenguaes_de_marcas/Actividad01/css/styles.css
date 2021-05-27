@@ -1,0 +1,97 @@
+html,
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0em;
+  /* bottom: -1em; */
+  top: 60px;
+}
+
+.boton {
+  height: 100%;
+}
+
+.black-bg {
+  padding: 1em 1em 1em 6em;
+  background-color: #000;
+}
+
+.nav a {
+  padding: 0 0.5em;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+.nav a:hover {
+  color: #c0c0c0;
+  text-decoration: underline;
+}
+.iconos {
+  height: 100%;
+}
+.hero {
+  width: 100%;
+  z-index: 0;
+}
+.caja {
+  text-align: center;
+  position: relative;
+  top: -16vh;
+}
+.sub-caja {
+  position: relative;
+  top: 0px;
+  width: 20%;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding:0.5em;
+  border: 10px solid white;
+  background-color: beige;
+}
+.sub-caja img {
+  position: relative;
+  top: 0;
+}
+.sub-caja:hover {
+  content: white;
+  border: 10px solid gray;
+  transform: scale(1.1);
+  transition: 0.5s;
+  z-index:10;
+}
+.formulario {
+  margin: auto;
+  padding: 1em;
+  text-align: left;
+  background-color: beige;
+  display: inline-block;
+}
+.form-item {
+  /*border:1px solid red;*/
+  padding-bottom: 16px;
+}
+.form-item input,
+textarea {
+  display: block;
+}
+.form-item-terminos {
+  padding-bottom: 16px;
+}
+footer {
+  background-color: gray;
+  text-align: center;
+  padding: 0.5em;
+}
+a {
+  color: #000;
+  font-weight: bold;
+}

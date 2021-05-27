@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Heladeria",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio02.Heladeria",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio02.Test",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayOfCuentas",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio01.cuentaCorriente.ArrayOfCuentas",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayOfCuentas",
+            "request": "launch",
+            "mainClass": "actividad07.ArrayOfCuentas",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hola",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio01.cuentaCorriente.Hola",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio01.cuentaCorriente.Test",
+            "projectName": "Actividad07_afb681ba"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestCuenta",
+            "request": "launch",
+            "mainClass": "actividad07.ejercicio01.cuentaCorriente.TestCuenta",
+            "projectName": "Actividad07_afb681ba"
+        }
+    ]
+}

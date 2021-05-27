@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehiculos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="vehiculos.xsd">
+    <vehiculo>
+        <marca>Toyota</marca>
+        <modelo>Auris</modelo>
+        <matricula>3511-BGH</matricula>
+        <puertas>5</puertas>
+        <foto>https://imgsvrcars-a.akamaihd.net/images/2018/3/Toyota-Auris/x.jpg/Toyota-Auris-1.jpg</foto>
+        <color>rojo</color>
+        <tipo>Coche</tipo>
+        <precio>12000</precio>
+        <comentario>El Toyota Auris es un automóvil de turismo.</comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Yamaha</marca>
+        <modelo>R1</modelo>
+        <matricula>7854-NKD</matricula>
+        <puertas>0</puertas>
+        <foto>https://i.ytimg.com/vi/ZuRVzLmd8Og/maxresdefault.jpg</foto>
+        <color>azul</color>
+        <tipo>Moto</tipo>
+        <precio>15000</precio>
+        <comentario>La Yamaha R1 es una moto deportiva.</comentario>
+    </vehiculo>
+    <vehiculo>
+        <marca>Mercedes</marca>
+        <modelo>Actros</modelo>
+        <matricula>8261-QJM</matricula>
+        <puertas>2</puertas>
+        <foto>https://cdn.motor1.com/images/mgl/8J78P/s1/2018-mercedes-benz-actros.jpg</foto>
+        <color>rojo</color>
+        <tipo>Camión</tipo>
+        <precio>60000</precio>
+        <comentario>Camion para transporte de mercancias.</comentario>
+    </vehiculo>
+</vehiculos>

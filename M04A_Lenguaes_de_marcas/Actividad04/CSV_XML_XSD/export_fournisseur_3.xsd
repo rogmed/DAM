@@ -1,0 +1,15 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:schemas-microsoft-com:office:excel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WorksheetOptions" type="xs:string"/>
+  <xs:element name="ExcelWorkbook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:short" name="WindowHeight"/>
+        <xs:element type="xs:short" name="WindowWidth"/>
+        <xs:element type="xs:short" name="WindowTopX"/>
+        <xs:element type="xs:byte" name="WindowTopY"/>
+        <xs:element type="xs:string" name="ProtectStructure"/>
+        <xs:element type="xs:string" name="ProtectWindows"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
