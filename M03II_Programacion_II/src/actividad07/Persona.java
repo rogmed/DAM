@@ -2,13 +2,13 @@ package actividad07;
 
 import actividad07.exceptions.*;
 
-public class Person {
+public class Persona {
 
     String nombre;
     int edad;
     String dni;
 
-    public Person(String nombre, int edad, String dni) throws NombreIncorrecto,
+    public Persona(String nombre, int edad, String dni) throws NombreIncorrecto,
      EdadIncorrecta, DniIncorrecto {
         this.nombre = nombre;
         this.edad = edad;
@@ -22,12 +22,16 @@ public class Person {
     public void setNombre(String nombre) throws NombreIncorrecto {
         try {
             if(nombre.length()<3) {
-                throw new NombreIncorrecto("Longitud de nombre no puede ser "+
-                "menor a 3");
+                throw new NombreIncorrecto("El nombre debe tener mínimo 3 letras");
+            } else if (nombre.matches(".*\\d.*")) {
+                throw new NombreIncorrecto("El nombre no puede contener dígitos.");
+            } else {
+                this.nombre = nombre;
             }
-            this.nombre = nombre;
         } catch (NombreIncorrecto e) {
             System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error inesperado");
         }
     }
 
@@ -38,11 +42,15 @@ public class Person {
     public void setEdad(int edad) throws EdadIncorrecta {
         try {
             if (edad < 0 || edad > 110) {
-                throw new EdadIncorrecta("Edad debe ser entre 0 y 110");
+                throw new EdadIncorrecta("La edad no puede ser menor a 1 ni "+
+                "mayor a 110.");
+            } else {
+                this.edad = edad;
             }
-            this.edad = edad;
         } catch (EdadIncorrecta e) {
             System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error inesperado");
         }
     }
 
@@ -53,9 +61,10 @@ public class Person {
     public void setDni(String dni) throws DniIncorrecto {
         try {
             if (dni.length()!=9) {
-                throw new DniIncorrecto("DNI MAL");
+                throw new DniIncorrecto("El DNI ha de tener una string de 9 valores.");
+            } else {
+                this.dni = dni;
             }
-            this.dni = dni;
         } catch (DniIncorrecto e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
