@@ -5,11 +5,10 @@ import actividad07.exceptions.*;
 public class Persona {
 
     String nombre;
-    int edad;
+    Integer edad;
     String dni;
 
-    public Persona(String nombre, int edad, String dni) throws NombreIncorrecto,
-     EdadIncorrecta, DniIncorrecto {
+    public Persona(String nombre, Integer edad, String dni) {
         this.nombre = nombre;
         this.edad = edad;
         this.dni = dni;
@@ -20,37 +19,25 @@ public class Persona {
     }
 
     public void setNombre(String nombre) throws NombreIncorrecto {
-        try {
-            if(nombre.length()<3) {
-                throw new NombreIncorrecto("El nombre debe tener mínimo 3 letras");
-            } else if (nombre.matches(".*\\d.*")) {
-                throw new NombreIncorrecto("El nombre no puede contener dígitos.");
-            } else {
-                this.nombre = nombre;
-            }
-        } catch (NombreIncorrecto e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error inesperado");
+        if (nombre.matches(".*\\d.*")) {
+            throw new NombreIncorrecto("El nombre no puede contener dígitos.");
+        } else if(nombre.length()<3) {
+            throw new NombreIncorrecto("El nombre debe tener mínimo 3 letras");
+        } else {
+            this.nombre = nombre;
         }
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) throws EdadIncorrecta {
-        try {
-            if (edad < 0 || edad > 110) {
-                throw new EdadIncorrecta("La edad no puede ser menor a 1 ni "+
-                "mayor a 110.");
-            } else {
-                this.edad = edad;
-            }
-        } catch (EdadIncorrecta e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error inesperado");
+    public void setEdad(Integer edad) throws EdadIncorrecta {
+        if (edad < 1 || edad > 110) {
+            throw new EdadIncorrecta("La edad no puede ser menor a 1 ni "+
+            "mayor a 110.");
+        } else {
+            this.edad = edad;
         }
     }
 
@@ -59,20 +46,14 @@ public class Persona {
     }
 
     public void setDni(String dni) throws DniIncorrecto {
-        try {
-            if (dni.length()!=9) {
-                throw new DniIncorrecto("El DNI ha de tener una string de 9 valores.");
-            } else {
-                this.dni = dni;
-            }
-        } catch (DniIncorrecto e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error inesperado");
+        if (dni.length()!=9) {
+            throw new DniIncorrecto("El DNI ha de tener una string de 9 valores.");
+        } else {
+            this.dni = dni;
         }
     }
 
-    Exception EdadIncorrecta = new Exception("La edad no puede ser menor a 1 o "
+   Exception EdadIncorrecta = new Exception("La edad no puede ser menor a 1 o "
     +"mayor a 110.");
 
 }
