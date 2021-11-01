@@ -158,6 +158,15 @@ public class Utilidades {
         }
     }
 
+     /**
+     * Presiona Enter con mensaje por defecto
+     * 
+     * Para el programa, muestra un mensaje y continua tras presionar Enter tecla
+     */
+    public static void pressEnter() {
+        pressEnter("Presiona ENTER para continuar.");
+    }
+
     /**
      * Imprime línea
      * 

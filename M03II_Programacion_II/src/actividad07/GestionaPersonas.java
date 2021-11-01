@@ -1,8 +1,10 @@
 package actividad07;
 
+import actividad07.exceptions.DemasiadoObjetos;
 import actividad07.exceptions.DniIncorrecto;
 import actividad07.exceptions.EdadIncorrecta;
 import actividad07.exceptions.NombreIncorrecto;
+import actividad07.exceptions.PosicionIncorrecta;
 
 import static actividad07.MisUtilidades.Utilidades.*;
 
@@ -28,8 +30,9 @@ public class GestionaPersonas {
             // MENU
             int opcion;
             do {
-                System.out.println("\nMenú principal. Elija una opción:"+
-                "\n 1. Crea un trabajador"+
+                linea("MENU PRINCIPAL");
+                System.out.println(
+                " 1. Crea un trabajador"+
                 "\n 2. Borra un trabajador"+
                 "\n 3. Añade un trabajador al grupo de trabajo"+
                 "\n 4. Borra un trabajador del grupo de trabajo"+
@@ -48,94 +51,130 @@ public class GestionaPersonas {
                         borraTrabajador();
                         break;
                     case 3:
-                        addTrabajadorGrupoTrabajo();
+                        try{
+                            addTrabajadorGrupoTrabajo();
+                        } catch (DemasiadoObjetos e){
+                            System.out.println(e.getMessage());
+                            e.printStackTrace();
+                        } catch (Exception e) {
+                            System.out.println("Error inesperado");
+                            e.printStackTrace();
+                        } finally {
+                            pressEnter();
+                        }
                         break;
                     case 4:
-                        System.out.println("ELEGIDA OPCION "+ opcion);
-                        // borraTrabajadorGrupoTrabajo();
+                    try {
+                        borraTrabajadorGrupoTrabajo();
+                    } catch (PosicionIncorrecta e) {
+                        System.out.println(e.getMessage());
+                        e.printStackTrace();
+                        pressEnter();
+                    }
                         break;
                 }
 
                 if (opcion!=0) {
-                    System.out.println("\nTrabajadores:");
+                    linea("Trabajadores:");
                     for (String k : trabajadores.keySet()) {
                         Persona p = trabajadores.get(k);
-                        System.out.println(p.getNombre() +" - Edad: " +p.getEdad() +
-                        " - DNI: " + p.getDni());
+                        System.out.println(p.toString());
                     }
     
-                    System.out.println("\nGrupo Trabajo:");
+                    linea("Grupo Trabajo:");
                     for (Persona p : grupoTrabajo) {
-                        System.out.println(p.getNombre() +" - Edad: " +p.getEdad() +
-                        " - DNI: " + p.getDni());
+                        System.out.println(grupoTrabajo.indexOf(p)+"- " +
+                        p.toString());
                     }
                     pressEnter("\nPresiona ENTER para continuar.");
                 }   
             } while (opcion !=0);          
     }
     
+    // OPCION 1
     static void creaTrabajador() {
         boolean errorStatus = false;
-        Persona nuevaPersona = new Persona(null, null, null);
+        Persona p = new Persona(null, null, null);
         do {
             try {
-                if (nuevaPersona.getDni() == null){
-                    nuevaPersona.setDni(pideString("Introduzca DNI: "));
+                if (p.getDni() == null){
+                    p.setDni(pideString("Introduzca DNI: "));
                 }
-                if (nuevaPersona.getNombre() == null){
-                    nuevaPersona.setNombre(pideString("Introduzca nombre: "));
+                if (p.getNombre() == null){
+                    p.setNombre(pideString("Introduzca nombre: "));
                 }
-                if (nuevaPersona.getEdad() == null){
-                    nuevaPersona.setEdad(pideEntero("Introduzca edad: "));
+                if (p.getEdad() == null){
+                    p.setEdad(pideEntero("Introduzca edad: "));
                 }
                 errorStatus = false;
-                trabajadores.put(nuevaPersona.getDni(), nuevaPersona);
+                trabajadores.put(p.getDni(), p);
+                System.out.println("Creado trabajador: " + p.toString());
+                pressEnter();
             } catch (DniIncorrecto e) {
-                e.printStackTrace();
                 System.out.println(e.getMessage());
+                e.printStackTrace();
                 errorStatus = true;
-                nuevaPersona.dni = null;
+                p.dni = null;
             } catch (EdadIncorrecta e) {
-                e.printStackTrace();
                 System.out.println(e.getMessage());
+                e.printStackTrace();
                 errorStatus = true;
-                nuevaPersona.edad = null;
+                p.edad = null;
             } catch (NombreIncorrecto e) {
-                e.printStackTrace();
                 System.out.println(e.getMessage());
+                e.printStackTrace();
                 errorStatus = true;
-                nuevaPersona.nombre = null;
+                p.nombre = null;
             }
         } while (errorStatus);
 
     }
 
+    // OPCION 2
     static void borraTrabajador() {
         try {
             String dni = pideString("\nIntroduzca DNI de trabajador a borrar: ");
-            System.out.println("Borrado: "+trabajadores.get(dni).getNombre() +
-                " - Edad: "+trabajadores.get(dni).getEdad()+
-                " - DNI: "+trabajadores.get(dni).getDni()
-                );
+            System.out.println("Borrado: "+trabajadores.get(dni).toString());
             trabajadores.remove(dni);
-            pressEnter("Presiona ENTER para continuar.");
         } catch (NullPointerException e) {
             System.out.println("No existe ese trabajador. Volviendo al menú.");
-        } catch (Exception e) {
-            System.out.println("Error inesperado");
-        }
-    }
-
-    static void addTrabajadorGrupoTrabajo() {
-        try {
-            String dni = pideString("\nIntroduzca DNI de trabajador a añadir"+
-                " a Grupo de Trabajo: ");
-            grupoTrabajo.add(trabajadores.get(dni));
-        } catch (NullPointerException e) {
-            System.out.println("DNI incorrecto.");
+            e.printStackTrace();
         } catch (Exception e) {
             System.out.println("Error inesperado");
             e.printStackTrace();
+        } finally {
+            pressEnter();
+        }
+    }
+
+    // OPCION 3
+    static void addTrabajadorGrupoTrabajo() throws DemasiadoObjetos {
+        if (grupoTrabajo.size() >= 2) {
+            throw new DemasiadoObjetos("Grupo de trabajo no puede " +
+                "contener más de 2 trabajadores.");
+        } else {
+            String dni = pideString("\nIntroduzca DNI de trabajador a "+
+                "añadir a Grupo de Trabajo: ");
+            if ((trabajadores.get(dni) != null) && (!grupoTrabajo.contains(trabajadores.get(dni)))) {
+                grupoTrabajo.add(trabajadores.get(dni));
+                System.out.println("Añadido al grupo de trabajo: "+
+                    trabajadores.get(dni).toString());
+            } else {
+                System.out.println("DNI no válido o ya se encuentra en el grupo.");
+            }
+        }
+    }
+
+    // OPCION 4
+    static void borraTrabajadorGrupoTrabajo() throws PosicionIncorrecta {
+        int i = pideEntero("Índice del trabajador dentro de Grupo de "+
+            "Trabajo a borrar: ");
+        if (i > grupoTrabajo.size()-1 || i < 0) {
+            throw new PosicionIncorrecta("Posición incorrecta.");
+        } else {
+            System.out.println("Borrando de grupo de trabajo: "+
+                grupoTrabajo.get(i).toString());
+            grupoTrabajo.remove(i);
         }
     }
 }

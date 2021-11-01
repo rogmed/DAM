@@ -53,8 +53,10 @@ public class Persona {
         }
     }
 
-   Exception EdadIncorrecta = new Exception("La edad no puede ser menor a 1 o "
-    +"mayor a 110.");
+   @Override
+   public String toString() {
+       return this.getNombre() + "  - Edad: "+this.getEdad()+"  - DNI: "+ this.getDni();
+   }
 
 }
 
