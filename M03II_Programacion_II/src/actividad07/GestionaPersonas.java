@@ -1,3 +1,10 @@
+/**
+ * Rogelio Medina Medina
+ * DAMx_M03IIB - Programacion II 2021/22
+ * UF5
+ * Actividad07 Estructuras de datos avanzadas y control de excepciones
+ */
+
 package actividad07;
 
 import actividad07.exceptions.DemasiadoObjetos;
